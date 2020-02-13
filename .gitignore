@@ -1,0 +1,11 @@
+.vs/
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.log
+*.exe
+*.ilk
+*.tlog
+*.txt
+/Debug
