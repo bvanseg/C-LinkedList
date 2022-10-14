@@ -28,7 +28,7 @@
 #include <stdarg.h>
 #include "linkedlist.h"
 
-LinkedList* create_linkedList(int elementSize) {
+LinkedList* linked_list_create(int elementSize) {
     LinkedList* list = malloc(sizeof(LinkedList));
 
     if (list != NULL) {
@@ -47,7 +47,7 @@ LinkedList* create_linkedList(int elementSize) {
     return list;
 }
 
-bool add_linkedList(LinkedList* list, void* value) {
+bool linked_list_add(LinkedList* list, void* value) {
     if (list == NULL)
         return false;
 
@@ -76,7 +76,7 @@ bool add_linkedList(LinkedList* list, void* value) {
     return true;
 }
 
-bool addAt_linkedList(LinkedList* list, void* value, int index) {
+bool linked_list_insert(LinkedList* list, void* value, int index) {
     if (list == NULL)
         return false;
 
@@ -113,20 +113,20 @@ bool addAt_linkedList(LinkedList* list, void* value, int index) {
     return false;
 }
 
-void addAll_linkedList(LinkedList* list, int size, ...) {
+void linked_list_add_all(LinkedList* list, int size, ...) {
     va_list params;
     va_start(params, size);
     void* arg = va_arg(params, void*);
     int i = 0;
     while (i < size) {
-        add_linkedList(list, arg);
+        linked_list_add(list, arg);
         arg = va_arg(params, void*);
         i++;
     }
     va_end(params);
 }
 
-bool remove_linkedList(LinkedList* list, int index) {
+bool linked_list_remove(LinkedList* list, int index) {
 
     LL_Node* prev = NULL;
     LL_Node* current = list->head;
@@ -153,11 +153,11 @@ bool remove_linkedList(LinkedList* list, int index) {
     return true;
 }
 
-bool removeLast_linkedList(LinkedList* list) {
-    return remove_linkedList(list, list->size - 1);
+bool linked_list_remove_last(LinkedList* list) {
+    return linked_list_remove(list, list->size - 1);
 }
 
-void* get_linkedList(LinkedList* list, int index) {
+void* linked_list_get(LinkedList* list, int index) {
     if (index == list->size)
         return NULL; // TODO: Throw error.
 
@@ -170,7 +170,7 @@ void* get_linkedList(LinkedList* list, int index) {
     return current->data;
 }
 
-void clear_linkedList(LinkedList* list) {
+void linked_list_clear(LinkedList* list) {
 
     LL_Node* current = list->head;
     LL_Node* next;
@@ -193,16 +193,16 @@ void clear_linkedList(LinkedList* list) {
     list->head = newHead;
 }
 
-int size_linkedList(LinkedList* list) {
+int linked_list_size(LinkedList* list) {
     return list->size;
 }
 
-bool isEmpty_linkedList(LinkedList* list) {
+bool linked_list_is_empty(LinkedList* list) {
     return list->size == 0;
 }
 
-void destroy_linkedList(LinkedList* list) {
-    clear_linkedList(list);
+void linked_list_destroy(LinkedList* list) {
+    linked_list_clear(list);
     free(list->head);
     free(list);
     list = NULL;

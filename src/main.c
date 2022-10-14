@@ -26,35 +26,35 @@
 #include "linkedlist.h"
 
 int main() {
-    LinkedList* list = create_linkedList(sizeof(int));
+    LinkedList* list = linked_list_create(sizeof(int));
 
     int a = 0, b = 1, c = 2, d = 3;
 
-    printf("Is list empty: %d\n", isEmpty_linkedList(list));
+    printf("Is list empty: %d\n", linked_list_is_empty(list));
 
-    add_linkedList(list, &a);
-    printf("Value at list[0]: %d\n", *(int*)get_linkedList(list, 0));
-    printf("Size of list: %d\n", size_linkedList(list));
+    linked_list_add(list, &a);
+    printf("Value at list[0]: %d\n", *(int*)linked_list_get(list, 0));
+    printf("Size of list: %d\n", linked_list_size(list));
 
-    add_linkedList(list, &b);
-    printf("Value at list[1]: %d\n", *(int*)get_linkedList(list, 1));
-    printf("Size of list: %d\n", size_linkedList(list));
+    linked_list_add(list, &b);
+    printf("Value at list[1]: %d\n", *(int*)linked_list_get(list, 1));
+    printf("Size of list: %d\n", linked_list_size(list));
 
-    add_linkedList(list, &c);
-    printf("Value at list[2]: %d\n", *(int*)get_linkedList(list, 2));
-    printf("Size of list: %d\n", size_linkedList(list));
+    linked_list_add(list, &c);
+    printf("Value at list[2]: %d\n", *(int*)linked_list_get(list, 2));
+    printf("Size of list: %d\n", linked_list_size(list));
 
-    add_linkedList(list, &d);
-    printf("Value at list[3]: %d\n", *(int*)get_linkedList(list, 3));
-    printf("Size of list: %d\n", size_linkedList(list));
+    linked_list_add(list, &d);
+    printf("Value at list[3]: %d\n", *(int*)linked_list_get(list, 3));
+    printf("Size of list: %d\n", linked_list_size(list));
 
-    printf("Is list empty: %d\n", isEmpty_linkedList(list));
+    printf("Is list empty: %d\n", linked_list_is_empty(list));
 
     printf("Clearing list...\n");
-    clear_linkedList(list);
+    linked_list_clear(list);
 
-    printf("Is list empty: %d\n", isEmpty_linkedList(list));
+    printf("Is list empty: %d\n", linked_list_is_empty(list));
 
-    destroy_linkedList(list);
+    linked_list_destroy(list);
     return 0;
 }

@@ -37,22 +37,22 @@ typedef struct linkedList {
     int elementSize;
 } LinkedList;
 
-LinkedList * create_linkedList(int elementSize);
+LinkedList * linked_list_create(int elementSize);
 
-bool add_linkedList(LinkedList * list, void * value);
-bool addAt_linkedList(LinkedList * list, void * value, int index);
-void addAll_linkedList(LinkedList * list, int size, ...);
+bool linked_list_add(LinkedList * list, void * value);
+bool linked_list_insert(LinkedList * list, void * value, int index);
+void linked_list_add_all(LinkedList * list, int size, ...);
 
-bool remove_linkedList(LinkedList * list, int index);
-bool removeLast_linkedList(LinkedList * list);
+bool linked_list_remove(LinkedList * list, int index);
+bool linked_list_remove_last(LinkedList * list);
 
-void * get_linkedList(LinkedList * list, int index);
+void * linked_list_get(LinkedList * list, int index);
 
-void clear_linkedList(LinkedList * list);
+void linked_list_clear(LinkedList * list);
 
-int size_linkedList(LinkedList * list);
-bool isEmpty_linkedList(LinkedList * list);
+int linked_list_size(LinkedList * list);
+bool linked_list_is_empty(LinkedList * list);
 
-void destroy_linkedList(LinkedList * list);
+void linked_list_destroy(LinkedList * list);
 
 #endif // LINKEDLIST_H_INCLUDED
