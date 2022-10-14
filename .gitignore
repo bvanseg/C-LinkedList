@@ -1,4 +1,8 @@
+build/
+CMakeFiles/
+Debug/
 .vs/
+.vscode/
 *.sln
 *.vcxproj
 *.filters
@@ -7,5 +11,5 @@
 *.exe
 *.ilk
 *.tlog
-*.txt
-/Debug
+*.cmake
+*.pdb

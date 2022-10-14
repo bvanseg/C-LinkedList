@@ -25,8 +25,7 @@
 #include <stdio.h>
 #include "linkedlist.h"
 
-int main()
-{
+int main() {
     LinkedList* list = create_linkedList(sizeof(int));
 
     int a = 0, b = 1, c = 2, d = 3;
