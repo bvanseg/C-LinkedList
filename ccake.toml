@@ -1,0 +1,13 @@
+[project_properties]
+ccake_version = "1.0.0"
+
+project_name = "C-LinkedList"
+project_version = "1.0.0"
+authors = ["Boston Vanseghi"]
+
+language = "C"
+project_type = "Binary"
+src_dir = "src"
+
+[compiler_properties]
+compiler_dir = "${COMPILER_DIR}"
